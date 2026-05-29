@@ -15,14 +15,14 @@
 #   devImage:          'ghcr.io/blend-apps/blend-dev-red-todo:latest'
 #   devInternalPort:   3000
 #   devInstallCommand: 'npm install'
-#   devCommand:        'node --watch server.js'
+#   devCommand:        'node server.js'
 #
 # Environment variables injected at provision time (by Blend/Fly):
 #   BLEND_FILE_DAEMON_TOKEN  — auth token for blend-file-daemon
 #   BLEND_GH_TOKEN           — GitHub token for git operations (clone/fetch/push)
 #   DEV_REPO_URL             — https URL to the user's fork
 #   DEV_BRANCH               — branch to check out
-#   DEV_COMMAND              — command to run the dev server (node --watch server.js)
+#   DEV_COMMAND              — command to run the dev server (node server.js)
 #   DEV_INSTALL_COMMAND      — (optional) npm install
 #   DEV_SOURCE_PATH          — /workspace (where the fork lives)
 

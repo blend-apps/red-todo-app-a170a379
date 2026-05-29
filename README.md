@@ -21,10 +21,9 @@ One click on Blend → tell the AI "make this blue and use a nicer font" → don
 | Framework  | Express 4                               |
 | Database   | SQLite via `better-sqlite3`             |
 | Frontend   | Vanilla HTML + CSS + JS (no build step) |
-| Dev server | `node --watch` (built-in, zero config)  |
+| Dev server | `node server.js` (restart via Blend when backend changes) |
 
-No TypeScript compilation, no bundler, no build step. Hot-reload works by just
-saving a file.
+No TypeScript compilation, no bundler, no build step. CSS/HTML/JS in `public/` reload on browser refresh; backend changes need a dev-server restart.
 
 ## Quick start
 

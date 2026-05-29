@@ -70,12 +70,11 @@ In production Docker deployments, mount a volume at `/app/data` to persist data
 across container restarts. In the Blend dev environment, `/workspace/data` is
 ephemeral (reset when the dev env is torn down).
 
-## Hot-reload (dev)
+## Dev server (no file watcher)
 
-`npm run dev` runs `node --watch server.js`. Node's built-in file watcher restarts
-the process when `server.js` or `db.js` changes. Static files in `public/` are
-served from disk on every request, so browser-reload-on-save is immediate (no
-server restart needed for HTML/CSS/JS changes).
+`npm run dev` runs `node server.js` without `--watch`. Static files in `public/` are
+served from disk on every request, so a browser reload picks up HTML/CSS/JS changes.
+Changes to `server.js` or `db.js` require the Blend agent to call `restart_dev_server`.
 
 ## Blend dev environment
 
@@ -86,12 +85,11 @@ When Blend provisions a dev env for this app, it:
    - Syncs `/workspace` to the user's fork at the requested branch
    - Starts `blend-file-daemon` on port 9999 (live file read/write)
    - Runs `npm install` (fast — `node_modules` are pre-baked, nothing to do if `package-lock.json` unchanged)
-   - Starts `node --watch server.js` in a restart loop
+   - Starts `node server.js` (restarts only on explicit `restart_dev_server` or crash)
 3. Exposes the app on port 3000 and `blend-file-daemon` on port 9999
 
-The Blend AI agent edits files in `/workspace` via `blend-file-daemon`. `node --watch`
-detects the changes and restarts the server in ~1 second. For CSS/JS/HTML changes,
-a browser reload is all that's needed.
+The Blend AI agent edits files in `/workspace` via `blend-file-daemon`. For CSS/JS/HTML,
+a browser reload is enough. For backend changes, the agent calls `restart_dev_server`.
 
 ## Customization surface area
 
