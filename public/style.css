@@ -1,23 +1,25 @@
 /*
  * ============================================================
- *  RED TODO APP — DEFAULT THEME
- *  ⚠️  Everything in this file is fair game to customize!
+ *  MY TODO LIST — THEME
+ *  Everything in this file is fair game to customize!
  *  Change the CSS variables below to retheme the whole app.
  * ============================================================
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 :root {
   /* ── Primary palette ── */
-  --color-bg:        #ff6b35;   /* 🎨 CHANGE ME: page background */
-  --color-surface:   #fffbe6;   /* 🎨 CHANGE ME: card / form background */
-  --color-primary:   #d62828;   /* 🎨 CHANGE ME: header, buttons */
-  --color-accent:    #ffe66d;   /* 🎨 CHANGE ME: highlights */
-  --color-text:      #1a1a2e;   /* 🎨 CHANGE ME: body text */
-  --color-done-text: #888;      /* 🎨 CHANGE ME: completed item text */
+  --color-bg:        #f0f2f5;
+  --color-surface:   #ffffff;
+  --color-primary:   #2563eb;
+  --color-accent:    #dbeafe;
+  --color-text:      #111827;
+  --color-done-text: #9ca3af;
 
   /* ── Typography ── */
-  --font-family:     'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', cursive; /* 🎨 CHANGE ME */
-  --font-size-base:  18px;                                                    /* 🎨 CHANGE ME */
+  --font-family:     'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-base:  16px;
 
   /* ── Layout ── */
   --border-radius:   4px;
@@ -39,35 +41,18 @@ body {
   padding-bottom: 3rem;
 }
 
-/* ── CHANGE ME banner ── */
-.change-me-banner {
-  background: var(--color-primary);
-  color: var(--color-accent);
-  text-align: center;
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  border-bottom: 3px solid #000;
-}
-
-.change-me-banner a {
-  color: #fff;
-  text-decoration: underline;
-}
-
 /* ── Header ── */
 header {
   background: var(--color-primary);
   color: #fff;
   padding: 2rem 1rem 1.5rem;
   text-align: center;
-  border-bottom: 4px solid #000;
+  border-bottom: 1px solid #1d4ed8;
 }
 
 header h1 {
   font-size: 2.8rem;
-  text-shadow: 3px 3px 0 #000;
+  text-shadow: none;
   line-height: 1.1;
 }
 
@@ -96,7 +81,7 @@ main {
   padding: 0.7rem 1rem;
   font-size: 1rem;
   font-family: var(--font-family);
-  border: 3px solid #000;
+  border: 1px solid #e5e7eb;
   border-radius: var(--border-radius);
   background: var(--color-surface);
   color: var(--color-text);
@@ -105,7 +90,7 @@ main {
 
 .add-form input:focus {
   border-color: var(--color-primary);
-  box-shadow: 3px 3px 0 #000;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
 }
 
 .add-form button {
@@ -115,16 +100,16 @@ main {
   font-weight: bold;
   background: var(--color-primary);
   color: #fff;
-  border: 3px solid #000;
+  border: 1px solid #e5e7eb;
   border-radius: var(--border-radius);
   cursor: pointer;
   white-space: nowrap;
-  box-shadow: 3px 3px 0 #000;
-  transition: transform 0.05s, box-shadow 0.05s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: background 0.15s, opacity 0.15s;
 }
 
-.add-form button:hover  { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 #000; }
-.add-form button:active { transform: translate(2px,2px);   box-shadow: 1px 1px 0 #000; }
+.add-form button:hover  { background: #1d4ed8; }
+.add-form button:active { opacity: 0.85; }
 
 /* ── Stats bar ── */
 .stats {
@@ -145,11 +130,11 @@ main {
   align-items: center;
   gap: 0.75rem;
   background: var(--color-surface);
-  border: 3px solid #000;
+  border: 1px solid #e5e7eb;
   border-radius: var(--border-radius);
   padding: 0.75rem 1rem;
   margin-bottom: 0.5rem;
-  box-shadow: 3px 3px 0 #000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
   transition: opacity 0.15s;
 }
 
